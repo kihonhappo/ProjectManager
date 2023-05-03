@@ -91,6 +91,9 @@
 11. Install Django Rest Framework - pip install djangorestframework
 12. Create Front-End App - python manage.py startapp main
 13. Models - When you create/change/delete a model use this cmd to update chages - python manage.py makemigrations
+14. Install Node JS - https://nodejs.org/en
+15. Install React Front-End - npm create-react-app front-end
+16. Install Bootstrap 5 
 
 # Models
 
@@ -181,6 +184,9 @@
 * [Django Rest Framework](https://www.django-rest-framework.org)
 * [PostgreSQL](https://www.postgresql.org)
 * [PgAdmin](https://www.pgadmin.org/)
+* [NodeJS](https://nodejs.org/en)
+* [React JS](https://react.dev/)
+* [Bootstrap 5](https://getbootstrap.com/docs/5.0/getting-started/introduction/)
 
 # Future Work
 
