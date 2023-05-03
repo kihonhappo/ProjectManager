@@ -64,7 +64,7 @@ class Stakeholders(models.Model):
         return self.First_Name + ' ' + self.Last_Name
     
 class Assignments(models.Model):
-    AssignmentsID = models.AutoField(primary_key=True, editable=False)
+    AssignmentID = models.AutoField(primary_key=True, editable=False)
     Project = models.ForeignKey("Projects", null=True, on_delete=models.SET_NULL)
     Stakeholder = models.ForeignKey("Stakeholders", null=True, on_delete=models.SET_NULL)
     Role = models.ForeignKey("Roles", null=True, on_delete=models.SET_NULL)
