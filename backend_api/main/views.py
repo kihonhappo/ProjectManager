@@ -1,4 +1,4 @@
-from rest_framework import generics
+from rest_framework import generics,permissions,pagination,viewsets
 from . import serializers
 from . import models
 
@@ -6,52 +6,90 @@ from . import models
 
 class ProjectList(generics.ListCreateAPIView):
     queryset = models.Projects.objects.all()
-    serializer_class = serializers.ProjectSerializer
+    serializer_class = serializers.ProjectListSerializer
 
 class ProjectDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset = models.Projects.objects.all()
     serializer_class = serializers.ProjectDetailSerializer
-
-class BacklogList(generics.ListAPIView):
+    
+class BacklogList(generics.ListCreateAPIView):
     queryset = models.BacklogItems.objects.all()
-    serializer_class = serializers.BackLogItemSerializer
+    serializer_class = serializers.BackLogItemListSerializer
 
-class WorkEventList(generics.ListAPIView):
+class BacklogItemDetail(generics.RetrieveUpdateDestroyAPIView):
+    queryset = models.BacklogItems.objects.all()
+    serializer_class = serializers.BackLogItemDetailSerializer
+
+class WorkEventList(generics.ListCreateAPIView):
     queryset = models.WorkEvents.objects.all()
-    serializer_class = serializers.WorkEventSerializer
+    serializer_class = serializers.WorkEventListSerializer
 
-class StakeholderList(generics.ListAPIView):
+class WorkEventDetail(generics.RetrieveUpdateDestroyAPIView):
+    queryset = models.WorkEvents.objects.all()
+    serializer_class = serializers.WorkEventDetailSerializer
+
+class StakeholderList(generics.ListCreateAPIView):
     queryset = models.Stakeholders.objects.all()
-    serializer_class = serializers.StakeholderSerializer
+    serializer_class = serializers.StakeholderListSerializer
 
-class AssignmentList(generics.ListAPIView):
+class StakeholderDetail(generics.RetrieveUpdateDestroyAPIView):
+    queryset = models.Stakeholders.objects.all()
+    serializer_class = serializers.StakeholderListSerializer
+class AssignmentList(generics.ListCreateAPIView):
     queryset = models.Assignments.objects.all()
-    serializer_class = serializers.AssignmentSerializer
+    serializer_class = serializers.AssignmentListSerializer
 
-class OrganizationList(generics.ListAPIView):
+class AssignmentDetail(generics.RetrieveUpdateDestroyAPIView):
+    queryset = models.Assignments.objects.all()
+    serializer_class = serializers.AssignmentDetailSerializer
+
+class OrganizationList(generics.ListCreateAPIView):
     queryset = models.Organizations.objects.all()
-    serializer_class = serializers.OrganizationSerializer
+    serializer_class = serializers.OrganizationListSerializer
 
-class TypeList(generics.ListAPIView):
+class OrganizationDetail(generics.RetrieveUpdateDestroyAPIView):
+    queryset = models.Organizations.objects.all()
+    serializer_class = serializers.OrganizationDetailSerializer
+
+class TypeList(generics.ListCreateAPIView):
     queryset = models.Types.objects.all()
-    serializer_class = serializers.TypeSerializer
+    serializer_class = serializers.TypeListSerializer
 
-class StatusList(generics.ListAPIView):
+class TypeDetail(generics.RetrieveUpdateAPIView):
+    queryset = models.Types.objects.all()
+    serializer_class = serializers.TypeDetailSerializer
+
+class StatusList(generics.ListCreateAPIView):
     queryset = models.Status.objects.all()
-    serializer_class = serializers.StatusSerializer
+    serializer_class = serializers.StatusListSerializer
 
-class LifeCycleList(generics.ListAPIView):
+class StatusDetail(generics.RetrieveUpdateDestroyAPIView):
+    queryset = models.Status.objects.all()
+    serializer_class = serializers.StatusDetailSerializer
+
+class LifeCycleList(generics.ListCreateAPIView):
     queryset = models.LifeCycle.objects.all()
-    serializer_class = serializers.LifeCycleSerializer
+    serializer_class = serializers.LifeCycleListSerializer
 
-class GenderList(generics.ListAPIView):
+class LifeCycleDetail(generics.RetrieveUpdateDestroyAPIView):
+    queryset = models.LifeCycle.objects.all()
+    serializer_class = serializers.LifeCycleDetailSerializer
+
+class GenderList(generics.ListCreateAPIView):
     queryset = models.Gender.objects.all()
-    serializer_class = serializers.GenderSerializer
+    serializer_class = serializers.GenderListSerializer
 
-class EthnicityList(generics.ListAPIView):
+class GenderDetail(generics.RetrieveUpdateDestroyAPIView):
+    queryset = models.Gender.objects.all()
+    serializer_class = serializers.GenderDetailSerializer
+
+class EthnicityViewSet(viewsets.ModelViewSet):
+    serializer_class = serializers.EthnicityListSerializer
     queryset = models.Ethnicity.objects.all()
-    serializer_class = serializers.EthnicitySerializer
+    
 
-class RoleList(generics.ListAPIView):
+class RolesViewSet(viewsets.ModelViewSet):
+    serializer_class = serializers.Role2Serializer
     queryset = models.Roles.objects.all()
-    serializer_class = serializers.RoleSerializer
+    #def get_queryset(self):
+    #  RoleID = self.kwargs['pk']

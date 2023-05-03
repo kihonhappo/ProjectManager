@@ -1,0 +1,36 @@
+
+   # path('roles/', views.RoleList.as_view()),
+   # path('role/<int:pk>', views.RoleDetail.as_view()),
+
+   """
+class RoleList(generics.ListCreateAPIView):
+    queryset = models.Roles.objects.all()
+    serializer_class = serializers.RoleListSerializer
+
+class RoleDetail(generics.RetrieveUpdateDestroyAPIView):
+    queryset = models.Roles.objects.all()
+    serializer_class = serializers.RoleDetailSerializer
+"""
+
+"""
+class RoleListSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = models.Roles
+        fields = ['RoleID','Title','Description']
+  #  def __init__(self, *args, **kwargs):
+   #     super(RoleListSerializer, self).__init__(self, *args, **kwargs) 
+
+class RoleDetailSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = models.Roles
+        fields = ['RoleID','Title','Description']
+   # def __init__(self, *args, **kwargs):
+    #    super(RoleDetailSerializer, self).__init__(self, *args, **kwargs) 
+"""
+
+class EthnicityDetail(generics.RetrieveUpdateDestroyAPIView):
+    queryset = models.Ethnicity.objects.all()
+    serializer_class = serializers.EthnicityDetailSerializer
+    
+    
+path('ethnicity/<int:pk>', views.EthnicityDetail.as_view()),

@@ -108,7 +108,7 @@ class Gender(models.Model):
         return self.Title
     
 class Ethnicity(models.Model):
-    EthnicityID = models.AutoField(primary_key=True, default=0)
+    EthnicityID = models.AutoField(primary_key=True, editable=False)
     Title = models.CharField(max_length=50, null=True)
     Description = models.TextField(null=True)
     def __str__(self):
