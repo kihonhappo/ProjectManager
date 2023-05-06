@@ -1,4 +1,9 @@
-import {useParams} from 'react-router-dom';
+/* This component sets the API Documentation Iframe src dynamically after the user clicks a link in the API Docuentation 
+section of the left side navbar. The idea is to allow a user easy access to the api demos after they have signed up to get 
+their user profile and their JWT token. 
+*/
+
+import {useParams} from 'react-router-dom'; // The useParams object allows the app to parse the url string from the route
 
 
 function Frame(){

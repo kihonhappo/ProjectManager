@@ -1,4 +1,4 @@
-import {useParams} from 'react-router-dom';
+import {useParams} from 'react-router-dom'; // The useParams object allows the app to parse the url string from the route
 import {useState,useEffect} from 'react';
 import Pagination from './Pagination';
 
@@ -104,7 +104,7 @@ function ListView(){
                         }
                     </tbody>
                 </table>
-                <Pagination />
+                <Pagination cnt={totalResult} dest='list/' />
             </div>
         </div>
        

@@ -10,11 +10,9 @@ function Header(){
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
             <li className="nav-item">
-                <a className="nav-link active" aria-current="page" href="/">Home</a>
+                <a className="nav-link active" aria-current="page" href="/dash">Home</a>
             </li>
-            <li className="nav-item">
-                <a className="nav-link" href="/list">ListView</a>
-            </li>
+            
             <li className="nav-item dropdown">
                 <a className="nav-link dropdown-toggle" href="/" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 Dropdown
@@ -27,7 +25,7 @@ function Header(){
                 </ul>
             </li>
             <li className="nav-item">
-                <a className="nav-link disabled" href="/" tabindex="-1" aria-disabled="true">Disabled</a>
+                <a className="nav-link" href="/" tabindex="-1" aria-disabled="true">Login</a>
             </li>
             </ul>
             
