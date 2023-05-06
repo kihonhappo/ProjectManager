@@ -3,9 +3,12 @@ from . import serializers
 from . import models
 from rest_framework.response import Response
 
-# Create your views here.
+# A view function, or view, is a Python function that takes a web request and returns a web response. This response can be the HTML 
+# contents of a web page, or a redirect, or a 404 error, or an XML document, an image or anything.
 
-class ProjectViewSet(viewsets.ModelViewSet):
+# This function recieves the web request for a list of projects or other requested api and then queries the Postgres DB and then uses the 
+# requested objects serializer to convert the returned data into a JSON transpert object and send it back to the React app.
+class ProjectViewSet(viewsets.ModelViewSet):   
     queryset = models.Projects.objects.all()
     serializer_class = serializers.ProjectSerializer
     

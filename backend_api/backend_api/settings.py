@@ -40,8 +40,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
-    
-
 ]
 
 MIDDLEWARE = [
@@ -55,14 +53,18 @@ MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
 ]
 
+# Use this to open you api server to recieve requests from cross origen clients. You will want to change the CORS_ORIGIN_ALLOW_ALL = False
+# when you go live. This will protect you from cross site scripting attacks.
 CORS_ORIGIN_ALLOW_ALL = True
 CORS_ORIGIN_WHITELIST = (
   'http://localhost:8000',
   'http://localhost:3000',
 )
 
+
 ROOT_URLCONF = 'backend_api.urls'
 
+# Admin forms and site
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
@@ -148,4 +150,5 @@ REST_FRAMEWORK = {
     'PAGE_SIZE':5
 }
 
+# Use this to allow iframes access to show your server urls
 X_FRAME_OPTIONS = 'ALLOW'

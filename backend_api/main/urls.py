@@ -2,6 +2,8 @@ from django.urls import path
 from . import views 
 from rest_framework import routers 
 
+# This is where the client api requests are recieved and then send out according to the request
+
 router = routers.DefaultRouter()
 router.register('role', views.RolesViewSet)
 router.register('ethnicity', views.EthnicityViewSet)
