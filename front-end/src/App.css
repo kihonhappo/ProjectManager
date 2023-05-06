@@ -36,3 +36,14 @@
     transform: rotate(360deg);
   }
 }
+
+.api-frame{height: 700px;}
+.green{color: green;}
+.red{color: red;}
+.blue{color: blue;}
+
+.back-green{background: green;}
+.back-red{background-color: red;}
+.back-blue{background-color: blue;}
+
+

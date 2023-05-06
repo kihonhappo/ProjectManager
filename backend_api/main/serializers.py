@@ -4,10 +4,11 @@ from . import models
 class ProjectSerializer(serializers.ModelSerializer):
     class Meta:
         model = models.Projects
-        fields = ['ProjectID','Title','Start_Date','Owner']
+        fields = ['ProjectID','Title','Start_Date']
     def __init__(self, *args, **kwargs):
+        
         super(ProjectSerializer, self).__init__(self, *args, **kwargs) 
-        self.Meta.depth = 2
+        self.Meta.depth = 1
 
 class BackLogItemSerializer(serializers.ModelSerializer):
     class Meta:
@@ -15,14 +16,14 @@ class BackLogItemSerializer(serializers.ModelSerializer):
         fields = ['BacklogItemID','Title','Start_Date']
     def __init__(self, *args, **kwargs):
         super(BackLogItemSerializer, self).__init__(self, *args, **kwargs) 
-        self.Meta.depth = 2
+        self.Meta.depth = 1
 class WorkEventSerializer(serializers.ModelSerializer):
     class Meta:
         model = models.WorkEvents
         fields = ['WorkEventID','Title','Work_Date']
     def __init__(self, *args, **kwargs):
         super(WorkEventSerializer, self).__init__(self, *args, **kwargs) 
-        self.Meta.depth = 2
+        self.Meta.depth = 1
 class StakeholderSerializer(serializers.ModelSerializer):
     class Meta:
         model = models.Stakeholders
