@@ -21,7 +21,7 @@ I wrote this software to demonstrate how to use Django as a web api that can the
 
 # Softwar Demo Video Walkthrough
 
-[Software Demo Video](http://youtube.link.goes.here)
+[Software Demo Video](https://youtu.be/62PkrOC-XyM)
 
 # Web Pages
 
